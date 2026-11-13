@@ -16,16 +16,32 @@ lineales con eliminación gaussiana o de Gauss-Jordan.
 - Comprobación por sustitución en las ecuaciones originales.
 - Modo de fracciones exactas y ejemplos guiados.
 
-## Ejecutar (Windows)
+## Ejecutar desde la terminal de VS Code (Windows)
 
-```bash
+1. Abre la carpeta del proyecto en VS Code: **Archivo → Abrir carpeta**.
+2. Abre la terminal integrada: **Terminal → Nueva terminal** (atajo: `Ctrl + ñ`).
+3. Instala el entorno una sola vez:
+
+```powershell
 python -m venv .venv
-.venv\Scripts\activate
-python -m pip install -r requirements.txt
-python -m streamlit run app.py
+.\.venv\Scripts\python.exe -m pip install --upgrade pip
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
 ```
 
-Si `streamlit` no se reconoce, usa siempre `python -m streamlit`.
+4. Enciende la aplicación:
+
+```powershell
+.\.venv\Scripts\python.exe -m streamlit run app.py
+```
+
+Se abre el navegador en `http://localhost:8501`. Para detenerla: `Ctrl + C`.
+
+Notas:
+
+- Se usa `.\.venv\Scripts\python.exe` en lugar de activar el entorno para evitar el
+  error de PowerShell *"la ejecución de scripts está deshabilitada en este sistema"*.
+- Si aparece `python no se reconoce`, usa `py` en su lugar (`py -m venv .venv`).
+- Si `streamlit` no se reconoce, ejecútalo siempre como `python -m streamlit`.
 
 ## Formato de entrada
 
